@@ -11,9 +11,12 @@
     <p class="header-logo"><a>DEVICE</a></p>
     <h1 class="visually-hidden">Интернет магазин гаджетов</h1>
     <div>
-      <form action="#" method="get" class="header-search">
-          <input type="text" name="search"><br>
-          <input type="submit" value="Поиск">
+      <form class="header-search" action="https://echo.htmlacademy.ru"
+       method="get" >
+          <label class="visually-hidden" for="search-input">Поиск по сайту</label>
+          <input id="search-input" type="text" name="search"
+          placeholder="Поиск по сайту">
+          <button type="submit">Поиск</button>
       </form>
       <ul class="header-user">
           <li class="header-user-login"><a href="#">Войти</a></li>
@@ -56,7 +59,8 @@
       <ol>
         <li>
           <div class="slide-image">
-              <img src="img/slider/slide1.png" alt="cамая длинная палка для селфи" width="560" height="510">
+              <img src="img/slider/slide1.png" alt="cамая длинная палка для селфи"
+              width="560" height="510">
           </div>
           <div class="slide-description">
             <h3>Делай селфи,<br>как Бен Стиллер! </h3>
@@ -82,7 +86,8 @@
         </li>
         <li>
           <div class="slide-image">
-              <img src="img/slider/slide2.png" alt="мотивирующие фитнес-браслеты" width="560" height="510">
+              <img src="img/slider/slide2.png" alt="мотивирующие фитнес-браслеты"
+               width="560" height="510">
           </div>
           <div class="slide-description">
             <h3>Худеем <br>правильно!</h3>
@@ -102,7 +107,8 @@
         </li>
         <li>
           <div class="slide-image">
-              <img src="img/slider/slide3.png" alt="квадрокоптер" width="560" height="510">
+              <img src="img/slider/slide3.png" alt="квадрокоптер" width="560"
+              height="510">
           </div>
           <div class="slide-description">
             <h3>Порхает как бабочка, жалит как пчела!</h3>
@@ -124,9 +130,9 @@
         </li>
       </ol>
       <ul>
-        <li><button class="slider-button slider-button-current">Товар 1</button></li>
-        <li><button class="slider-button">Товар 2</button></li>
-        <li><button class="slider-button">Товар 3</button></li>
+        <li><button type="button" class="slider-button slider-button-current">Товар 1</button></li>
+        <li><button type="button" class="slider-button">Товар 2</button></li>
+        <li><button type="button" class="slider-button">Товар 3</button></li>
       </ul>
     </section>
 
@@ -146,28 +152,31 @@
         <h2 class="visually-hidden">Мы предоставляем</h2>
         <ul class="services-list">
           <li>
-            <button class="services-list-button">Доставка</button>
+            <button type="button" class="services-list-button">Доставка</button>
             <div class="services-list-decription services-list-delivery">
               <h3>Доставка</h3>
               <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду
-                совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.
+                совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его
+                на ваш этаж.
               </p>
             </div>
           </li>
           <li>
-            <button class="services-list-button">Гарантия</button>
+            <button type="button" class="services-list-button">Гарантия</button>
             <div class="services-list-decription services-list-warrant">
               <h3>Гарантия</h3>
               <p>Если из-за возгорания купленного у нас товара у вас сгорит
-                дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.
+                дом — не переживайте, мы выдадим вам новый. Товар, не дом,
+                конечно же.
               </p>
             </div>
           </li>
           <li>
-            <button class="services-list-button">Кредит</button>
+            <button type="button" class="services-list-button">Кредит</button>
             <div class="services-list-decription services-list-warrant">
               <h3>Кредит</h3>
-              <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут
+              <p>Залезть в долговую яму стало проще! Кредитные консультанты
+                подберут
                   для вас наиболее выгодные условия кредита.
                   Выгодные для нашего банка, разумеется.
               </p>
@@ -210,11 +219,12 @@
         Вы можете забрать товар сами, заехав в наш офис.
         Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.
       </p>
-      <button class="map">
-        <img src="img/map.jpg" width="560" height="222" alt="схема проезда">
+      <button type="button" class="map">
+        <img src="img/map.jpg" width="560" height="222" alt="Офис компании
+        по адресу г. Москва, ул. Строителей, 15">
       </button>
       <p>
-        <button class="button">Напишите нам</button>
+        <button type="button" class="button">Напишите нам</button>
       </p>
     </section>
   </main>
@@ -251,13 +261,29 @@
 
   <section class="modal modal-writeus">
     <h2 class="visually-hidden">Напишите нам</h2>
-    <!-- Здесь будет форма -->
-    <span class="modal-close">x</span>
+    <form class="form-writeus" action="https://echo.htmlacademy.ru" method="post">
+      <p>
+          <label for="form-writeus-name">Ваше имя:</label>
+          <input id="form-writeus-name" type="text" name="name" value="" placeholder="Имя Фамилия">
+      </p>
+      <p>
+          <label for="form-writeus-email">Ваш e-mail:</label>
+          <input id="form-writeus-email" type="email" name="email" value="" placeholder="email@example.com">
+      </p>
+      <p>
+          <label for="form-writeus-text">Текст письма:</label>
+          <textarea id="form-writeus-text" name="text" placeholder="В свободной форме"></textarea>
+      </p>
+      <button class="button" type="submit">Отправить</button>
+    </form>
+    <button class="modal-close" type="button">Закрыть</button>
   </section>
 
   <section class="modal modal-map">
     <h2 class="visually-hidden">Как до нас добраться</h2>
-    <span class="modal-close">x</span>
+    <img src="img/map-big.jpg" width="960" height="559"
+    alt="Офис компании по адресу г. Москва, ул. Строителей, 15">
+    <button class="modal-close" type="button">Закрыть</button>
   </section>
 </body>
 </html>

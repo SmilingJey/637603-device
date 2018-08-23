@@ -16,7 +16,7 @@
           <label class="visually-hidden" for="search-input">Поиск по сайту</label>
           <input id="search-input" type="text" name="search"
           placeholder="Поиск по сайту">
-          <button type="submit">Поиск</button>
+          <button type="submit">Найти</button>
       </form>
       <ul class="header-user">
           <li class="header-user-login"><a href="#">Войти</a></li>
@@ -219,10 +219,10 @@
         Вы можете забрать товар сами, заехав в наш офис.
         Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.
       </p>
-      <button type="button" class="map">
+      <a class="map" href="#" aria-label="Схема проезда">
         <img src="img/map.jpg" width="560" height="222" alt="Офис компании
         по адресу г. Москва, ул. Строителей, 15">
-      </button>
+      </a>
       <p>
         <button type="button" class="button">Напишите нам</button>
       </p>
@@ -249,12 +249,12 @@
     </div>
     <div>
       <ul class="footer-social">
-        <li><a class="social-button social-facebook" href="#">Facebook</a></li>
-        <li><a class="social-button social-instagramm" href="#">Instagram</a></li>
-        <li><a class="social-button social-twiter" href="#">Twitter</a></li>
+        <li><a class="social-button social-facebook" href="#"><span class="visually-hidden">Facebook</span></a></li>
+        <li><a class="social-button social-instagramm" href="#"><span class="visually-hidden">Instagram</span></a></li>
+        <li><a class="social-button social-twiter" href="#"><span class="visually-hidden">Twitter</span></a></li>
       </ul>
       <p class="footer-copyright">
-        <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a>
+        <a href="https://htmlacademy.ru/intensive/htmlcss"><span class="visually-hidden">HTML Academy</span></a>
       </p>
     </div>
   </footer>
@@ -276,14 +276,14 @@
       </p>
       <button class="button" type="submit">Отправить</button>
     </form>
-    <button class="modal-close" type="button">Закрыть</button>
+    <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
   </section>
 
   <section class="modal modal-map">
     <h2 class="visually-hidden">Как до нас добраться</h2>
     <img src="img/map-big.jpg" width="960" height="559"
     alt="Офис компании по адресу г. Москва, ул. Строителей, 15">
-    <button class="modal-close" type="button">Закрыть</button>
+    <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
   </section>
 </body>
 </html>

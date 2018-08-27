@@ -8,52 +8,54 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic" rel="stylesheet">
 </head>
 <body>
-  <header class="main-header">
-    <p class="header-logo"><a>DEVICE</a></p>
-    <div class="header-content">
-      <form class="header-search" action="https://echo.htmlacademy.ru"
-       method="get" >
-          <label class="visually-hidden" for="search-input">Поиск по сайту</label>
-          <input id="search-input" type="text" name="search"
-          placeholder="Поиск по сайту" autocomplete="off">
-          <button type="submit">Найти</button>
-      </form>
-      <ul class="header-user">
-          <li class="header-user-name"><a href="#">Валентин Петухов</a></li>
-          <li class="header-user-logout"><a href="#">Выйти</a></li>
+  <div class="padding-container">
+    <header class="main-header">
+      <p class="header-logo"><a>DEVICE</a></p>
+      <div class="header-content">
+        <form class="header-search" action="https://echo.htmlacademy.ru"
+        method="get" >
+            <label class="visually-hidden" for="search-input">Поиск по сайту</label>
+            <input id="search-input" type="text" name="search"
+            placeholder="Поиск по сайту" autocomplete="off">
+            <button type="submit">Найти</button>
+        </form>
+        <ul class="header-user">
+            <li class="header-user-name"><a href="#">Валентин Петухов</a></li>
+            <li class="header-user-logout"><a href="#">Выйти</a></li>
+          </ul>
+        <p class="header-compare">
+          <a href="#">Сравнить</a>
+        </p>
+        <p class="header-basket">
+            <a href="#">Корзина</a>
+        </p>
+      </div>
+      <nav class="header-menu">
+        <ul>
+          <li class="header-catalog">
+              <a href="catalog.html">Каталог товаров</a>
+            <div class="header-catalog-menu">
+              <ul class="header-catalog-menu-column1">
+                <li><a href="#">Виртуальная реальность</a></li>
+                <li><a href="#">Моноподы для селфи</a></li>
+                <li><a href="#">Экшн-камеры</a></li>
+              </ul>
+              <ul class="header-catalog-menu-column2">
+                <li><a href="#">Фитнес-браслеты</a></li>
+                <li><a href="#">Умные часы</a></li>
+              </ul>
+              <ul class="header-catalog-menu-column3">
+                <li><a href="#">Квадрокоптеры</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="header-catalog-delivery"><a href="#">Доставка</a></li>
+          <li class="header-catalog-warrant"><a href="#">Гарантия</a></li>
+          <li class="header-catalog-contacts"><a href="#">Контакты</a></li>
         </ul>
-      <p class="header-compare">
-        <a href="#">Сравнить</a>
-      </p>
-      <p class="header-basket">
-          <a href="#">Корзина</a>
-      </p>
-    </div>
-    <nav class="header-menu">
-      <ul>
-        <li class="header-catalog">
-            <a href="catalog.html">Каталог товаров</a>
-          <div class="header-catalog-menu">
-            <ul class="header-catalog-menu-column1">
-              <li><a href="#">Виртуальная реальность</a></li>
-              <li><a href="#">Моноподы для селфи</a></li>
-              <li><a href="#">Экшн-камеры</a></li>
-            </ul>
-            <ul class="header-catalog-menu-column2">
-              <li><a href="#">Фитнес-браслеты</a></li>
-              <li><a href="#">Умные часы</a></li>
-            </ul>
-            <ul class="header-catalog-menu-column3">
-              <li><a href="#">Квадрокоптеры</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="header-catalog-delivery"><a href="#">Доставка</a></li>
-        <li class="header-catalog-warrant"><a href="#">Гарантия</a></li>
-        <li class="header-catalog-contacts"><a href="#">Контакты</a></li>
-      </ul>
-    </nav>
-  </header>
+      </nav>
+    </header>
+  </div>
 
   <main class="main-catalog">
     <section class="breadcrumbs">

@@ -10,7 +10,8 @@
 <body>
   <div class="padding-container">
     <header class="main-header">
-      <p class="header-logo"><a>DEVICE</a></p>
+      <p class="header-logo"><a href="index.html" >DEVICE</a></p>
+      <h1 class="visually-hidden">Интернет магазин гаджетов</h1>
       <div class="header-content">
         <form class="header-search" action="https://echo.htmlacademy.ru"
         method="get" >
@@ -19,19 +20,23 @@
             placeholder="Поиск по сайту" autocomplete="off">
             <button type="submit">Найти</button>
         </form>
-        <ul class="header-user">
-            <li class="header-user-name"><a href="#">Валентин Петухов</a></li>
+        <div class="header-user-and-compare">
+          <ul class="header-user">
+            <li class="header-user-login header-link-icon"><a href="#">Валентин Петухов</a></li>
             <li class="header-user-logout"><a href="#">Выйти</a></li>
           </ul>
-        <p class="header-compare">
-          <a href="#">Сравнить</a>
-        </p>
-        <p class="header-basket">
-            <a href="#">Корзина</a>
-        </p>
+          <div class="header-compare-and-basket">
+            <p class="header-compare header-link-icon">
+              <a href="#">Сравнить</a>
+            </p>
+            <p class="header-basket header-link-icon">
+                <a href="#">Корзина</a>
+            </p>
+          </div>
+        </div>
       </div>
-      <nav class="header-menu">
-        <ul>
+      <nav>
+        <ul class="header-menu">
           <li class="header-catalog">
               <a href="catalog.html">Каталог товаров</a>
             <div class="header-catalog-menu">
@@ -78,19 +83,29 @@
               <fieldset class="fieldset-price">
                 <legend>Стоимость</legend>
 
-                <span id="max-price-button" class="max-price-button"></span>
-                <span id="min-price-button" class="min-price-button"></span>
-                <span id="price-line-active" class="price-line-active"></span>
-                <span class="price-line"></span>
-
-                <label class="visually-hidden" for="filter-min-price">Минимальная цена</label>
-                <input class="visually-hidden" type="number" name="min-price" id="filter-min-price">
-
-                <label class="visually-hidden" for="filter-max-price">Максимальная цена</label>
-                <input class="visually-hidden" type="number" name="max-price" id="filter-max-price">
-
+                <div class="range-filter">
+                  <div class="range-controls">
+                    <div class="scale">
+                      <div class="bar"></div>
+                    </div>
+                    <div class="toggle toggle-min">
+                      <div></div>
+                      <span>от 0</span>
+                    </div>
+                    <div class="toggle toggle-max">
+                      <div></div>
+                      <span>до 5000</span>
+                    </div>
+                  </div>
+                  <div class="price-controls">
+                    <label class="visually-hidden" for="filter-min-price">Минимальная цена</label>
+                    <input class="visually-hidden" type="number" name="min-price" id="filter-min-price">
+                    <label class="visually-hidden" for="filter-max-price">Максимальная цена</label>
+                    <input class="visually-hidden" type="number" name="max-price" id="filter-max-price">
+                  </div>
+                </div>
               </fieldset>
-              <fieldset>
+              <fieldset class="fieldset-color">
                 <legend>Цвет</legend>
                   <ul>
                     <li class="filter-option">
@@ -115,7 +130,7 @@
                     </li>
                   </ul>
               </fieldset>
-              <fieldset>
+              <fieldset class="fieldset-bluetooth">
                 <legend>Bluetooth</legend>
                 <ul>
                   <li class="filter-option">
@@ -142,8 +157,8 @@
               <li><a href="#">По популярности</a></li>
             </ul>
             <ul class="catalog-sort-direction">
-              <li><a href="#"><span class="visually-hidden">По возрастанию</span></a></li>
-              <li><a class="sort-direction-active" href="#"><span class="visually-hidden">По убыванию</span></a></li>
+              <li class="sort-direction-icon sort-direction-up"><a href="#"><span class="visually-hidden">По возрастанию</span></a></li>
+              <li class="sort-direction-icon sort-direction-down sort-direction-active"><a href="#"><span class="visually-hidden">По убыванию</span></a></li>
             </ul>
           </div>
 
@@ -189,7 +204,7 @@
               </div>
               <div class="catalog-item-name">
                 <h3><a href="catalog-item.html">Непотопляемая селфи-палка</a></h3>
-                <p>2500 руб.</p>
+                <p>2 500 руб.</p>
               </div>
             </li>
 
@@ -224,35 +239,42 @@
   </main>
 
   <div class="footer-container">
-      <footer class="main-footer">
-        <div class="footer-logo-navigation">
-          <p><a class="footer-logo">DEVICE</a></p>
-          <ul class="footer-navigation">
-            <li><a href="#" class="footer-navigation-login">Войти</a></li>
-            <li><a href="#" class="footer-navigation-compare">Сравнить</a></li>
-            <li><a href="#" class="footer-navigation-basket">Корзина</a></li>
+    <footer class="main-footer">
+      <div class="footer-logo-navigation">
+        <p><a href="index.html" class="footer-logo">DEVICE</a></p>
+        <div class="footer-navigation">
+          <ul class="footer-user">
+            <li class="footer-user-login header-link-icon"><a href="#">Валентин Петухов</a></li>
+            <li class="footer-user-logout"><a href="#">Выйти</a></li>
           </ul>
-        </div>
-        <div class="footer-address-menu-phone">
-          <p class="footer-address">г. Москва, ул. Строителей, 15</p>
-          <ul class="footer-menu">
-            <li><a href="#">Доставка</a></li>
-            <li><a href="#">Гарантия</a></li>
-            <li><a href="#">Контакты</a></li>
-          </ul>
-          <p class="footer-phone">Тел.: +7 (495) 495-95-95</p>
-        </div>
-        <div class="footer-social-copyright">
-          <ul class="footer-social">
-            <li><a class="social-button social-facebook" href="#"><span class="visually-hidden">Facebook</span></a></li>
-            <li><a class="social-button social-instagramm" href="#"><span class="visually-hidden">Instagram</span></a></li>
-            <li><a class="social-button social-twiter" href="#"><span class="visually-hidden">Twitter</span></a></li>
-          </ul>
-          <p class="footer-copyright">
-            <a href="https://htmlacademy.ru/intensive/htmlcss"><span class="visually-hidden">HTML Academy</span></a>
+          <p class="footer-compare footer-link-icon">
+            <a href="#">Сравнить</a>
+          </p>
+          <p class="footer-basket footer-link-icon">
+              <a href="#">Корзина</a>
           </p>
         </div>
-      </footer>
-    </div>
+      </div>
+      <div class="footer-address-menu-phone">
+        <p class="footer-address">г. Москва, ул. Строителей, 15</p>
+        <ul class="footer-menu">
+          <li><a href="#">Доставка</a></li>
+          <li><a href="#">Гарантия</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+        <p class="footer-phone">Тел.: +7 (495) 495-95-95</p>
+      </div>
+      <div class="footer-social-copyright">
+        <ul class="footer-social">
+          <li><a class="social-button social-facebook" href="#"><span class="visually-hidden">Facebook</span></a></li>
+          <li><a class="social-button social-instagramm" href="#"><span class="visually-hidden">Instagram</span></a></li>
+          <li><a class="social-button social-twiter" href="#"><span class="visually-hidden">Twitter</span></a></li>
+        </ul>
+        <p class="footer-copyright">
+          <a href="https://htmlacademy.ru/intensive/htmlcss"><span class="visually-hidden">HTML Academy</span></a>
+        </p>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

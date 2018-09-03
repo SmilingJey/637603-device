@@ -334,13 +334,14 @@ img {
 }
 
 .slider{
-  box-sizing: border-box;
   width: 1160px;
   height: 520px;
   margin-top: 0px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 73px;
+  padding-left: 20px;
+  padding-right: 20px;
   position: relative;
 }
 
@@ -387,7 +388,7 @@ img {
   z-index: 0;
 }
 
-.slide-image, 
+.slide-image,
 .slide-description{
   z-index: 2;
 }
@@ -516,12 +517,13 @@ img {
 }
 
 .popular{
-  box-sizing: border-box;
   width: 1160px;
   margin-top: 0px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 180px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .popular ul{
@@ -591,7 +593,7 @@ img {
   background-image: url("../img/svg/popular-6.svg");
 }
 
-/* TODO: неработает в хроме! */ 
+/* TODO: неработает в хроме! */
 .popular-vr a:active::before{
   background-image: url("../img/svg/popular-1-opasity03.svg");
 }
@@ -632,6 +634,8 @@ img {
   top: -100px;
   margin-left:auto;
   margin-right:auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .services-list li{
@@ -648,7 +652,7 @@ img {
   height: 320px;
   background-color: #000;
   position: absolute;
-  left: 277px;
+  left: 297px;
 }
 
 .services-list .button{
@@ -730,6 +734,8 @@ img {
   margin-left:auto;
   margin-right:auto;
   margin-bottom: 75px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .logotypes ul{
@@ -749,9 +755,6 @@ img {
   background-position-x: 0px;
   background-position-y: center;
   opacity: 0.2;
-  filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
-  filter: gray;
-  -webkit-filter: grayscale(100%);
 }
 
 .logo-item a:hover{
@@ -811,6 +814,8 @@ img {
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .info_and_contacts section{
@@ -869,13 +874,12 @@ img {
 /* TODO заменить маркер на бордер радиус */
 .info li::before{
   content: "";
-  background-image: url("../img/ul-marker.png");
-  background-repeat: no-repeat;
   display: inline-block;
-  background-position-y: bottom;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   margin-right: 25px;
+  border: 2px solid #e5e5e5;
+  border-radius: 50%;
 }
 
 .contact p{
@@ -895,6 +899,8 @@ img {
   min-height: 325px;
   margin-left:auto;
   margin-right:auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .main-footer::after{
@@ -1208,7 +1214,7 @@ img {
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 14px;
   font-weight: 300;
-  line-height: 18px;
+  line-height: 50px;
   color: rgba(70,70,70,0.4);
 }
 
@@ -1327,9 +1333,9 @@ img {
 
 .breadcrumbs{
   box-sizing: border-box;
-  width: 1160px;
-  padding-left: 60px;
-  padding-right: 60px;
+  width: 1200px;
+  padding-left: 80px;
+  padding-right: 80px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 45px;
@@ -1414,17 +1420,20 @@ img {
   left: 50%;
   background: linear-gradient(to bottom, #ebebeb 70px, #fff 70px);
 }
+
 .catalog-content {
   width: 1160px;
   display: flex;
   margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .filters {
   width: 330px;
   box-sizing: border-box;
   padding-left: 60px;
-  background: linear-gradient(to bottom, #dadada 70px, #ececec 70px);
+  background: linear-gradient(to bottom, #dbdbdb 70px, #ececec 70px);
 }
 
 .catalog {
@@ -1453,27 +1462,30 @@ img {
 
 .filters fieldset{
   border: none;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 15px;
+  margin-bottom: 45px;
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
   color: #000;
-  position: relative;
-  margin: 0px;
-  padding: 0px;
-  padding-top: 15px;
-  margin-bottom: 45px;
 }
 
-.filters fieldset::before{
+.filter-fieldset-wrap{
+  position: relative;
+}
+
+.filter-fieldset-wrap::before{
   content: "";
   display: block;
+  position: absolute;
+  top: -13px;
+  left: 0px;
   width: 200px;
   height: 2px;
   background-color: #000;
-  position: absolute;
-  top: -14px;
-  left: 0px;
 }
 
 .filters-form .fieldset-price{

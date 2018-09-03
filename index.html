@@ -177,7 +177,6 @@
           <li>
             <input class="visually-hidden" type="radio" id="services-button-2" name="services-buttons">
             <label for="services-button-2" class="button services-list-button" tabindex="0">Гарантия</label>
-            </label>
             <div class="services-list-decription services-list-warrant">
               <h3>Гарантия</h3>
               <p>Если из-за возгорания купленного у нас товара у вас сгорит
@@ -236,11 +235,11 @@
           Вы можете забрать товар сами, заехав в наш офис.
           Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.
         </p>
-        <a class="map" href="contacts.html" id="buttonShowMap" onclick="showMap();return false;";return false;"" aria-label="Схема проезда">
+        <a class="map" href="contacts.html" id="buttonShowMap" onclick="showMap();return false;" aria-label="Схема проезда">
           <!--<img id="map-image" src="img/map.jpg" width="560" height="222" alt="Офис компании
           по адресу г. Москва, ул. Строителей, 15"> -->
 
-          <img width="560" height="222"src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A74c72da84e0f499bd47233046f3b0626b5daec7b14d793f8d3df26b5a9f5762a&amp;width=560&amp;height=220&amp;lang=ru_RU" alt="Офис компании по адресу г. Москва, ул. Строителей, 15" style="border: 0;">
+          <img width="560" height="222" src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A74c72da84e0f499bd47233046f3b0626b5daec7b14d793f8d3df26b5a9f5762a&amp;width=560&amp;height=220&amp;lang=ru_RU" alt="Офис компании по адресу г. Москва, ул. Строителей, 15" style="border: 0;">
 
         </a>
         <p>
@@ -310,15 +309,16 @@
     <button class="modal-close" onclick="hideWriteUs()" type="button"><span class="visually-hidden">Закрыть</span></button>
   </section>
 
-  <div class="modal-overlay" id="modal-overlay" onclick="hideAllModal()">
-
   <section class="modal modal-map" id="modal-map">
     <h2 class="visually-hidden">Как до нас добраться</h2>
     <!-- <img id="modal-map-image" src="img/map-big.jpg" width="960" height="560"
     alt="Офис компании по адресу г. Москва, ул. Строителей, 15"> -->
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addffddc1fdabeea8f24af986348e9cf78a2b88ec0239470a51f74bbad55a1043&amp;width=960&amp;height=560&amp;lang=ru_RU&amp;scroll=true"></script>
+    <script async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addffddc1fdabeea8f24af986348e9cf78a2b88ec0239470a51f74bbad55a1043&amp;width=960&amp;height=560&amp;lang=ru_RU&amp;scroll=true"></script>
     <button class="modal-close" onclick="hideMap()" type="button"><span class="visually-hidden">Закрыть</span></button>
   </section>
+
+  <div class="modal-overlay" id="modal-overlay" onclick="hideAllModal()"></div>
+
   <script src="js/scripts.js"></script>
 </body>
 </html>

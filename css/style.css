@@ -564,7 +564,8 @@ img {
 
 .popular-item a::before{
   content: "";
-  display: block;
+  display: inline-block;
+  vertical-align: top;
   width: 160px;
   height: 160px;
   background-color: #f7e296;
@@ -573,7 +574,7 @@ img {
   background-position: 50% 50%;
 }
 
-.popular-item:hover a::before{
+.popular-item a:hover::before{
   background-color: #f0c52e;
 }
 
@@ -602,7 +603,6 @@ img {
   background-image: url("../img/svg/popular-6.svg");
 }
 
-/* TODO: неработает в хроме! */
 .popular-vr a:active::before{
   background-image: url("../img/svg/popular-1-opasity03.svg");
 }
@@ -628,32 +628,41 @@ img {
 }
 
 .services{
+  position: relative;
   margin-top: 100px;
   background-color: #e5e5e5;
   min-height: 290px;
   margin-bottom: 70px;
 }
 
-.services-list{
-  list-style: none;
+.services-conteiner{
   width: 1160px;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  top: -100px;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-.services-list li{
-  margin-bottom: 22px;
-}
-.services-list li:first-child{
-  padding-top: 80px;
+.services-menu{
+  position: absolute;
+  width: 277px;
+  min-height: 320px;
+  margin: 0;
+  padding: 0;
+  top: -100px;
+  margin-left:auto;
+  margin-right:auto;
+  list-style: none;
+  border-right: 7px solid black;
 }
 
+.services-menu li{
+  margin-bottom: 22px;
+}
+.services-menu li:first-child{
+  padding-top: 80px;
+}
+/*
 .services-list::before{
   content: "";
   display: block;
@@ -662,45 +671,52 @@ img {
   background-color: #000;
   position: absolute;
   left: 297px;
-}
+}*/
 
-.services-list .button{
+.services-menu .button{
   width: 160px;
 }
 
-.services-list-decription{
-  position: absolute;
-  left: 420px;
-  top: 27px;
-  width: 460px;
-  visibility: hidden;
+.services-decription{
+  position: relative;
+  top: -27px;
+  margin: 0 0 0 400px ;
+  padding: 0;
+  list-style: none;
 }
 
-.services-list-decription::before{
+.services-decription li{
+  position: relative;
+  width: 460px;
+  display: none;
+  padding-bottom: 50px;
+}
+
+.services-decription div::before{
   content: "";
   display: block;
   position: absolute;
   width: 200px;
   height: 200px;
-  top: 40px;
+  top: -5px;
   left: 525px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
-.services-list-delivery::before{
+.services-delivery::before{
   background-image: url("../img/svg/delivery.svg");
 }
 
-.services-list-warrant::before{
+.services-warrant::before{
   background-image: url("../img/svg/warranty.svg");
 }
 
-.services-list-credit::before{
+.services-credit::before{
   background-image: url("../img/svg/credit.svg");
 }
 
-.services-list-decription h3{
+.services-decription h3{
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-weight: bold;
   font-size: 47px;
@@ -710,22 +726,22 @@ img {
   margin-bottom: 30px;
 }
 
-#services-button-1:checked ~ div,
-#services-button-2:checked ~ div,
-#services-button-3:checked ~ div{
-  visibility: visible;
+#services-button-1:checked ~ .services-decription>li:nth-child(1),
+#services-button-2:checked ~ .services-decription>li:nth-child(2),
+#services-button-3:checked ~ .services-decription>li:nth-child(3){
+  display: block;
 }
 
-#services-button-1:checked ~ label,
-#services-button-2:checked ~ label,
-#services-button-3:checked ~ label{
+#services-button-1:checked ~ .services-menu>li:nth-child(1)>label,
+#services-button-2:checked ~ .services-menu>li:nth-child(2)>label,
+#services-button-3:checked ~ .services-menu>li:nth-child(3)>label{
   background-color: #000;
   color: #f7e184;
 }
 
-#services-button-1:checked ~ label::before,
-#services-button-2:checked ~ label::before,
-#services-button-3:checked ~ label::before{
+#services-button-1:checked ~ ul>li:nth-child(1)>label::before,
+#services-button-2:checked ~ ul>li:nth-child(2)>label::before,
+#services-button-3:checked ~ ul>li:nth-child(3)>label::before{
   content: "";
   display: block;
   position: absolute;
@@ -1194,6 +1210,12 @@ img {
   padding-left: 21px;
 }
 
+.form-writeus input:invalid,
+.form-writeus input:invalid:focus,
+.form-writeus input:invalid:focus{
+  background-color: #f6dada;
+}
+
 .form-writeus textarea{
   box-sizing: border-box;
   width: 760px;
@@ -1641,7 +1663,7 @@ img {
 }
 
 .filter-input-checkbox + label::before,
-.filter-input-checkbox:checked + label:active::before {
+.filter-input-checkbox:checked:not(:disabled) + label:active::before {
   content: "";
   position: absolute;
   left: 0px;
@@ -1654,7 +1676,7 @@ img {
 }
 
 .filter-input-checkbox:checked + label::before,
-.filter-input-checkbox + label:active::before {
+.filter-input-checkbox:not(:disabled) + label:active::before {
   background-image: url("../img/svg/checkbox-on.svg");
 }
 
@@ -1664,7 +1686,7 @@ img {
 }
 
 .filter-input-radio + label::before,
-.filter-input-radio:checked + label:active::before {
+.filter-input-radio:checked:not(:disabled) + label:active::before {
   content: "";
   position: absolute;
   left: 0px;
@@ -1677,16 +1699,8 @@ img {
 }
 
 .filter-input-radio:checked + label::before,
-.filter-input-radio + label:active::before {
-  content: "";
-  position: absolute;
-  left: 0px;
-  top: 9px;
-  width: 26px;
-  height: 26px;
+.filter-input-radio:not(:disabled) + label:active::before {
   background-image: url("../img/svg/radio-on.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
 }
 
 .filter-input-radio + label:hover::before,

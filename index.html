@@ -149,24 +149,37 @@
     </section>
 
     <section class="popular">
-        <h2 class="visually-hidden">Популярные категории товаров</h2>
-        <ul>
-          <li class="popular-item popular-vr"><a href="#">Виртуальная реальность</a></li>
-          <li class="popular-item popular-monopod"><a href="#">Моноподы <br> для селфи</a></li>
-          <li class="popular-item popular-camera"><a href="#">Экшн-камеры</a></li>
-          <li class="popular-item popular-band"><a href="#">Фитнес-браслеты</a></li>
-          <li class="popular-item popular-smartwatch"><a href="#">Умные часы</a></li>
-          <li class="popular-item popular-quadro"><a href="#">Квадрокоптеры</a></li>
-        </ul>
+      <h2 class="visually-hidden">Популярные категории товаров</h2>
+      <ul>
+        <li class="popular-item popular-vr"><a href="#">Виртуальная реальность</a></li>
+        <li class="popular-item popular-monopod"><a href="#">Моноподы <br> для селфи</a></li>
+        <li class="popular-item popular-camera"><a href="#">Экшн-камеры</a></li>
+        <li class="popular-item popular-band"><a href="#">Фитнес-браслеты</a></li>
+        <li class="popular-item popular-smartwatch"><a href="#">Умные часы</a></li>
+        <li class="popular-item popular-quadro"><a href="#">Квадрокоптеры</a></li>
+      </ul>
     </section>
 
     <section class="services">
-        <h2 class="visually-hidden">Мы предоставляем</h2>
-        <ul class="services-list">
+      <h2 class="visually-hidden">Мы предоставляем</h2>
+      <div class="services-conteiner">
+        <input class="visually-hidden" type="radio" id="services-button-1" name="services-buttons" checked>
+        <input class="visually-hidden" type="radio" id="services-button-2" name="services-buttons">
+        <input class="visually-hidden" type="radio" id="services-button-3" name="services-buttons">
+        <ul class="services-menu">
           <li>
-            <input class="visually-hidden" type="radio" id="services-button-1" name="services-buttons" checked>
             <label for="services-button-1" class="button services-list-button" tabindex="0">Доставка</label>
-            <div class="services-list-decription services-list-delivery">
+          </li>
+          <li>
+            <label for="services-button-2" class="button services-list-button" tabindex="0">Гарантия</label>
+          </li>
+          <li>
+            <label for="services-button-3" class="button services-list-button" tabindex="0">Кредит</label>
+          </li>
+        </ul>
+        <ul class="services-decription">
+          <li>
+            <div class="services-delivery">
               <h3>Доставка</h3>
               <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду
                 совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его
@@ -175,9 +188,7 @@
             </div>
           </li>
           <li>
-            <input class="visually-hidden" type="radio" id="services-button-2" name="services-buttons">
-            <label for="services-button-2" class="button services-list-button" tabindex="0">Гарантия</label>
-            <div class="services-list-decription services-list-warrant">
+            <div class="services-warrant">
               <h3>Гарантия</h3>
               <p>Если из-за возгорания купленного у нас товара у вас сгорит
                 дом — не переживайте, мы выдадим вам новый. Товар, не дом,
@@ -186,9 +197,7 @@
             </div>
           </li>
           <li>
-            <input class="visually-hidden" type="radio" id="services-button-3" name="services-buttons">
-            <label for="services-button-3" class="button services-list-button" tabindex="0">Кредит</label>
-            <div class="services-list-decription services-list-credit">
+            <div class="services-credit">
               <h3>Кредит</h3>
               <p>Залезть в долговую яму стало проще! Кредитные консультанты
                 подберут
@@ -198,6 +207,7 @@
             </div>
           </li>
         </ul>
+      </div>
     </section>
 
     <section class="logotypes">
@@ -291,11 +301,11 @@
       <div class="writeus-name-email">
         <p>
             <label for="form-writeus-name">Ваше имя:</label>
-            <input id="form-writeus-name" type="text" name="name" value="" placeholder="Имя Фамилия">
+            <input id="form-writeus-name" type="text" name="name" value="" placeholder="Имя Фамилия" pattern="[A-Za-zА-Яа-яЁё\-]{1,}\s[A-Za-zА-Яа-яЁё\-]{1,}">
         </p>
         <p>
             <label for="form-writeus-email">Ваш e-mail:</label>
-            <input id="form-writeus-email" type="email" name="email" value="" placeholder="email@example.com">
+            <input id="form-writeus-email" type="email" name="email" value="" placeholder="email@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
         </p>
       </div>
       <p>

@@ -554,8 +554,9 @@ img {
 }
 
 .popular-item a{
-  color: #000;
   position: relative;
+  display: block;
+  color: #000;
 }
 
 .popular-item a:active{
@@ -570,61 +571,52 @@ img {
   height: 160px;
   background-color: #f7e296;
   margin-bottom: 35px;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
 
 .popular-item a:hover::before{
   background-color: #f0c52e;
 }
 
-.popular-vr a::before{
+.popular-item a:after{
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  width: 160px;
+  height: 160px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.popular-item a:active::after{
+  opacity: 0.3;
+}
+
+.popular-vr a::after{
   background-image: url("../img/svg/popular-1.svg");
 }
 
-.popular-monopod a::before{
+.popular-monopod a::after{
   background-image: url("../img/svg/popular-2.svg");
   background-position: center bottom;
 }
 
-.popular-camera a::before{
+.popular-camera a::after{
   background-image: url("../img/svg/popular-3.svg");
 }
 
-.popular-band a::before{
+.popular-band a::after{
   background-image: url("../img/svg/popular-4.svg");
 }
 
-.popular-smartwatch a::before{
+.popular-smartwatch a::after{
   background-image: url("../img/svg/popular-5.svg");
 }
 
-.popular-quadro a::before{
+.popular-quadro a::after{
   background-image: url("../img/svg/popular-6.svg");
-}
-
-.popular-vr a:active::before{
-  background-image: url("../img/svg/popular-1-opasity03.svg");
-}
-
-.popular-monopod a:active::before{
-  background-image: url("../img/svg/popular-2-opasity03.svg");
-}
-
-.popular-camera a:active::before{
-  background-image: url("../img/svg/popular-3-opasity03.svg");
-}
-
-.popular-band a:active::before{
-  background-image: url("../img/svg/popular-4-opasity03.svg");
-}
-
-.popular-smartwatch a:active::before{
-  background-image: url("../img/svg/popular-5-opasity03.svg");
-}
-
-.popular-quadro a:active::before{
-  background-image: url("../img/svg/popular-6-opasity03.svg");
 }
 
 .services{
@@ -662,16 +654,6 @@ img {
 .services-menu li:first-child{
   padding-top: 80px;
 }
-/*
-.services-list::before{
-  content: "";
-  display: block;
-  width: 7px;
-  height: 320px;
-  background-color: #000;
-  position: absolute;
-  left: 297px;
-}*/
 
 .services-menu .button{
   width: 160px;
@@ -761,6 +743,8 @@ img {
   margin-bottom: 75px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .logotypes ul{
@@ -774,62 +758,54 @@ img {
 .logo-item a{
   display: block;
   font-size: 0px;
-  height: 140px;
+  height: 100px;
   width: 260px;
   background-repeat: no-repeat;
-  background-position-x: 0px;
-  background-position-y: center;
   opacity: 0.2;
 }
 
 .logo-item a:hover{
   opacity: 1;
-  filter:none;
-  -webkit-filter: none;
-  position: relative;
 }
 
-.logotype-dji a{
-  background-image: url("../img/logo/logo-dji-gray.jpg");
+.logotype-dji a:hover {
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px 0px;
 }
 
-.logotype-spgadgets a{
-  background-image: url("../img/logo/logo-spgadgets-gray.jpg");
+.logotype-dji a {
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -100px;
 }
 
-.logotype-gopro a{
-  background-image: url("../img/logo/logo-gopro-gray.jpg");
+.logotype-gopro a:hover {
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -200px;
+}
+
+.logotype-gopro a {
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -300px;
+}
+
+.logotype-spgadgets a:hover {
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -400px;
+}
+
+.logotype-spgadgets a {
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -500px;
+}
+
+.logotype-vive a:hover{
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -600px;
 }
 
 .logotype-vive a{
-  background-image: url("../img/logo/logo-vive-gray.jpg");
-}
-
-.logo-item a:hover::before{
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-position-x: 0px;
-  background-position-y: center;
-}
-
-.logotype-dji a:hover::before{
-  background-image: url("../img/logo/logo-dji.jpg");
-}
-
-.logotype-spgadgets a:hover::before{
-  background-image: url("../img/logo/logo-spgadgets.jpg");
-}
-
-.logotype-gopro a:hover::before{
-  background-image: url("../img/logo/logo-gopro.jpg");
-}
-
-.logotype-vive a:hover::before{
-  background-image: url("../img/logo/logo-vive.jpg");
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -700px;
 }
 
 .info_and_contacts{
@@ -896,7 +872,6 @@ img {
   padding-right: 70px;
 }
 
-/* TODO заменить маркер на бордер радиус */
 .info li::before{
   content: "";
   display: inline-block;

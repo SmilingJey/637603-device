@@ -128,11 +128,26 @@ img {
   margin-top: 4px;
   position: relative;
   cursor: pointer;
+  display: none;
 }
 
 .header-search input:focus + button{
+  display: block;
   border-color: black;
   color: #000;
+}
+
+.header-search input:focus + button:hover,
+.header-search button:focus{
+  display: block;
+  background-color: black;
+  color: #fff;
+}
+
+.header-search button:active{
+  display: block;
+  background-color: black;
+  color: rgba(255,255,255,0.3);
 }
 
 .header-search button::before{
@@ -146,19 +161,11 @@ img {
   background-color: #000;
 }
 
-.header-search input:focus + button::before{
+.header-search input:focus + button::before,
+.header-search button:hover::before,
+.header-search button:active::before,
+.header-search button:focus::before{
   display: block;
-}
-
-.header-search input:focus + button:hover,
-.header-search button:focus{
-  background-color: black;
-  color: #fff;
-}
-
-.header-search button:active{
-  background-color: black;
-  color: rgba(255,255,255,0.3);
 }
 
 .header-search button,
@@ -278,7 +285,7 @@ img {
   background-position: 0px 0px;
   opacity: 0.3;
   position: relative;
-  left: 14px;
+  left: 12px;
   top: 2px;
 }
 
@@ -302,9 +309,10 @@ img {
   background-color: #f7e296;
 }
 
-/* TODO наведение только на ссыдку а не на ли*/
-/* TODO сделать выпадение при фокусе */
-.header-catalog:hover .header-catalog-menu{
+.header-catalog:hover .header-catalog-menu,
+.header-catalog:focus .header-catalog-menu,
+.header-catalog>a:hover ~ .header-catalog-menu,
+.header-catalog>a:focus ~ .header-catalog-menu{
   display: flex;
 }
 
@@ -361,8 +369,7 @@ img {
   width: 100%;
   height: 520px;
   visibility: hidden;
-
-  transition : visibility 0.5s linear, opacity 0.5s linear;
+  /*transition : visibility 0.5s linear, opacity 0.5s linear;*/
   opacity:0;
 }
 
@@ -453,17 +460,7 @@ img {
   border-collapse: collapse;
   border: none;
 }
-/*
-.slide-description tbody,
-.slide-description table{
-  display: flex;
-  flex-direction: column;
-}
 
-.slide-description .slider-table-head{
-  order: 2;
-}
-*/
 .slide-description th {
   text-align: left;
   width: 140px;
@@ -515,7 +512,7 @@ img {
 #slide-button-2:checked ~ ol>li:nth-child(2),
 #slide-button-3:checked ~ ol>li:nth-child(3){
   visibility: visible;
-  transition : visibility 0.3s linear, opacity 0.3s linear;
+  /*transition : visibility 0.3s linear, opacity 0.3s linear;*/
   opacity:1;
 }
 
@@ -649,7 +646,7 @@ img {
 }
 
 .services-menu li{
-  margin-bottom: 22px;
+  margin-bottom: 25px;
 }
 .services-menu li:first-child{
   padding-top: 80px;
@@ -1326,7 +1323,7 @@ img {
   display: inline-block;
   box-sizing: border-box;
   position: relative;
-  padding: 8px 10px;
+  padding: 7px 10px 9px 10px;
   z-index: 1;
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-weight: bold;
@@ -1356,7 +1353,8 @@ img {
   transition: height 0.1s, top 0.1s;
 }
 
-.button:hover::before{
+.button:hover::before,
+.button:focus::before{
   content: "";
   display: inline-block;
   position: absolute;
@@ -1569,7 +1567,6 @@ img {
   padding-left: 40px;
 }
 
-
 .range-controls {
   position: relative;
   height: 45px;
@@ -1632,13 +1629,8 @@ img {
   margin-left: -35px;
 }
 
-.filter-input:hover + label,
-.filter-input:focus + label {
-  color: #663d15;
-}
-
 .filter-input-checkbox + label::before,
-.filter-input-checkbox:checked:not(:disabled) + label:active::before {
+.filter-input-checkbox:checked:not(:disabled) + label:active::before{
   content: "";
   position: absolute;
   left: 0px;
@@ -1656,7 +1648,7 @@ img {
 }
 
 .filter-input-checkbox + label:hover::before,
-.filter-input-checkbox:checked + label:hover::before{
+.filter-input-checkbox:focus + label::before{
   opacity: 0.6;
 }
 
@@ -1679,7 +1671,7 @@ img {
 }
 
 .filter-input-radio + label:hover::before,
-.filter-input-radio:checked + label:hover::before {
+.filter-input-radio:focus + label::before {
   opacity: 0.6;
 }
 
@@ -1956,7 +1948,6 @@ img {
   margin: 0;
 }
 
-/* TODO: как выровнять по центру по вертикали без paddinga? */
 .pagination-list-container>p>a{
   box-sizing: border-box;
   display: block;
@@ -1980,6 +1971,3 @@ img {
 .pagination-list-container>p>a:active{
   color: rgba(0,0,0,0.3);
 }
-
-
-

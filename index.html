@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic" rel="stylesheet">
 </head>
 <body>
@@ -37,7 +37,7 @@
       <nav>
         <ul class="header-menu">
           <li class="header-catalog">
-              <a href="catalog.html">Каталог товаров</a>
+            <a href="catalog.html">Каталог товаров</a>
             <div class="header-catalog-menu">
               <ul class="header-catalog-menu-column1">
                 <li><a href="#">Виртуальная реальность</a></li>
@@ -68,9 +68,9 @@
       <input class="visually-hidden" type="radio" id="slide-button-2" name="toggle">
       <input class="visually-hidden" type="radio" id="slide-button-3" name="toggle">
       <div class="slider-controls">
-        <label for="slide-button-1">Первый</label>
-        <label for="slide-button-2">Второй</label>
-        <label for="slide-button-3">Третий</label>
+        <label for="slide-button-1" tabindex="0">Первый</label>
+        <label for="slide-button-2" tabindex="0">Второй</label>
+        <label for="slide-button-3" tabindex="0">Третий</label>
       </div>
       <ol>
         <li class="slide">
@@ -245,7 +245,7 @@
           Вы можете забрать товар сами, заехав в наш офис.
           Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.
         </p>
-        <a class="contact-button-map" href="contacts.html" aria-label="Схема проезда">
+        <a class="contact-button-map" href="https://yandex.ru/maps/?z=16&ll=37.52910682936061,55.687598211352885&l=map&origin=jsapi_2_1_68&from=api-maps&um=constructor:ddffddc1fdabeea8f24af986348e9cf78a2b88ec0239470a51f74bbad55a1043" aria-label="Схема проезда">
           <!--<img src="img/map.jpg" width="560" height="222" alt="Офис компании
           по адресу г. Москва, ул. Строителей, 15"> -->
           <img width="560" height="222" src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A74c72da84e0f499bd47233046f3b0626b5daec7b14d793f8d3df26b5a9f5762a&amp;width=560&amp;height=220&amp;lang=ru_RU" alt="Офис компании по адресу г. Москва, ул. Строителей, 15" style="border: 0;">
@@ -318,19 +318,13 @@
   </section>
 
   <section class="modal modal-map">
-    <h2 class="visually-hidden">Как до нас добраться</h2>
-    <!-- <img src="img/map-big.jpg" width="960" height="560"
-    alt="Офис компании по адресу г. Москва, ул. Строителей, 15"> -->
-
+   <h2 class="visually-hidden">Как до нас добраться</h2>
    <script async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addffddc1fdabeea8f24af986348e9cf78a2b88ec0239470a51f74bbad55a1043&amp;width=960&amp;height=560&amp;lang=ru_RU&amp;scroll=true"></script>
-
-    <!-- <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Addffddc1fdabeea8f24af986348e9cf78a2b88ec0239470a51f74bbad55a1043&amp;source=constructor" width="960" height="560" ></iframe>  -->
-
-    <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+   <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
   </section>
 
   <div class="modal-overlay"></div>
 
-  <script src="js/scripts.js"></script>
+  <script src="js/scripts.min.js"></script>
 </body>
 </html>

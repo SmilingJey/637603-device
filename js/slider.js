@@ -14,7 +14,7 @@ if (slider){
     slides[slideNum].checked = true;
   }
 
-  var sliderInterval = setInterval(nextSlide, 10000);
+  var sliderInterval = setInterval(nextSlide, 5000);
 
   for(var i=0; i<slides.length;i++){
     slides[i].addEventListener("click", function (evt) {

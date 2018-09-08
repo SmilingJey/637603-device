@@ -159,11 +159,26 @@ img {
   margin-top: 4px;
   position: relative;
   cursor: pointer;
+  display: none;
 }
 
 .header-search input:focus + button{
+  display: block;
   border-color: black;
   color: #000;
+}
+
+.header-search input:focus + button:hover,
+.header-search button:focus{
+  display: block;
+  background-color: black;
+  color: #fff;
+}
+
+.header-search button:active{
+  display: block;
+  background-color: black;
+  color: rgba(255,255,255,0.3);
 }
 
 .header-search button::before{
@@ -177,19 +192,11 @@ img {
   background-color: #000;
 }
 
-.header-search input:focus + button::before{
+.header-search input:focus + button::before,
+.header-search button:hover::before,
+.header-search button:active::before,
+.header-search button:focus::before{
   display: block;
-}
-
-.header-search input:focus + button:hover,
-.header-search button:focus{
-  background-color: black;
-  color: #fff;
-}
-
-.header-search button:active{
-  background-color: black;
-  color: rgba(255,255,255,0.3);
 }
 
 .header-search button,
@@ -321,7 +328,7 @@ img {
   background-position: 0px 0px;
   opacity: 0.3;
   position: relative;
-  left: 14px;
+  left: 12px;
   top: 2px;
 }
 
@@ -346,9 +353,10 @@ img {
   background-color: #f7e296;
 }
 
-/* TODO наведение только на ссыдку а не на ли*/
-/* TODO сделать выпадение при фокусе */
-.header-catalog:hover .header-catalog-menu{
+.header-catalog:hover .header-catalog-menu,
+.header-catalog:focus .header-catalog-menu,
+.header-catalog>a:hover ~ .header-catalog-menu,
+.header-catalog>a:focus ~ .header-catalog-menu{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -412,23 +420,27 @@ img {
   overflow: hidden;
   width: 100%;
   height: 520px;
-  background-color: #fff;
   visibility: hidden;
+  /*transition : visibility 0.5s linear, opacity 0.5s linear;*/
+  opacity:0;
 }
 
-.slide::before{
+.slider::before{
   content: "";
   display: block;
-  width: 100%;
+  width: 1160px;
   height: 114px;
   position: absolute;
   top: 0;
   left: 0;
   background-color: #f7e296;
   z-index: 0;
+  opacity:1;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.slide::after{
+.slider::after{
   content: "";
   display: block;
   width: 100px;
@@ -438,6 +450,8 @@ img {
   left: 600px;
   background-color: #fff;
   z-index: 0;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .slide-image,
@@ -501,23 +515,6 @@ img {
   border: none;
 }
 
-.slide-description tbody,
-.slide-description table{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.slide-description .slider-table-head{
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
-}
-
 .slide-description th {
   text-align: left;
   width: 140px;
@@ -549,7 +546,7 @@ img {
   position: absolute;
   bottom: 63px;
   top: 330px;
-  right: 60px;
+  right: 80px;
   z-index: 20;
   font-size: 0;
 }
@@ -569,6 +566,8 @@ img {
 #slide-button-2:checked ~ ol>li:nth-child(2),
 #slide-button-3:checked ~ ol>li:nth-child(3){
   visibility: visible;
+  /*transition : visibility 0.3s linear, opacity 0.3s linear;*/
+  opacity:1;
 }
 
 #slide-button-1:checked ~ .slider-controls>label:nth-child(1),
@@ -611,8 +610,9 @@ img {
 }
 
 .popular-item a{
-  color: #000;
   position: relative;
+  display: block;
+  color: #000;
 }
 
 .popular-item a:active{
@@ -621,143 +621,140 @@ img {
 
 .popular-item a::before{
   content: "";
-  display: block;
+  display: inline-block;
+  vertical-align: top;
   width: 160px;
   height: 160px;
   background-color: #f7e296;
   margin-bottom: 35px;
+}
+
+.popular-item a:hover::before{
+  background-color: #f0c52e;
+}
+
+.popular-item a:after{
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  width: 160px;
+  height: 160px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
-.popular-item:hover a::before{
-  background-color: #f0c52e;
+.popular-item a:active::after{
+  opacity: 0.3;
 }
 
-.popular-vr a::before{
+.popular-vr a::after{
   background-image: url("../img/svg/popular-1.svg");
 }
 
-.popular-monopod a::before{
+.popular-monopod a::after{
   background-image: url("../img/svg/popular-2.svg");
   background-position: center bottom;
 }
 
-.popular-camera a::before{
+.popular-camera a::after{
   background-image: url("../img/svg/popular-3.svg");
 }
 
-.popular-band a::before{
+.popular-band a::after{
   background-image: url("../img/svg/popular-4.svg");
 }
 
-.popular-smartwatch a::before{
+.popular-smartwatch a::after{
   background-image: url("../img/svg/popular-5.svg");
 }
 
-.popular-quadro a::before{
+.popular-quadro a::after{
   background-image: url("../img/svg/popular-6.svg");
 }
 
-/* TODO: неработает в хроме! */
-.popular-vr a:active::before{
-  background-image: url("../img/svg/popular-1-opasity03.svg");
-}
-
-.popular-monopod a:active::before{
-  background-image: url("../img/svg/popular-2-opasity03.svg");
-}
-
-.popular-camera a:active::before{
-  background-image: url("../img/svg/popular-3-opasity03.svg");
-}
-
-.popular-band a:active::before{
-  background-image: url("../img/svg/popular-4-opasity03.svg");
-}
-
-.popular-smartwatch a:active::before{
-  background-image: url("../img/svg/popular-5-opasity03.svg");
-}
-
-.popular-quadro a:active::before{
-  background-image: url("../img/svg/popular-6-opasity03.svg");
-}
-
 .services{
+  position: relative;
   margin-top: 100px;
   background-color: #e5e5e5;
   min-height: 290px;
   margin-bottom: 70px;
 }
 
-.services-list{
-  list-style: none;
+.services-conteiner{
   width: 1160px;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  top: -100px;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-.services-list li{
-  margin-bottom: 22px;
+.services-menu{
+  position: absolute;
+  width: 277px;
+  min-height: 320px;
+  margin: 0;
+  padding: 0;
+  top: -100px;
+  margin-left:auto;
+  margin-right:auto;
+  list-style: none;
+  border-right: 7px solid black;
 }
-.services-list li:first-child{
+
+.services-menu li{
+  margin-bottom: 25px;
+}
+.services-menu li:first-child{
   padding-top: 80px;
 }
 
-.services-list::before{
-  content: "";
-  display: block;
-  width: 7px;
-  height: 320px;
-  background-color: #000;
-  position: absolute;
-  left: 297px;
-}
-
-.services-list .button{
+.services-menu .button{
   width: 160px;
 }
 
-.services-list-decription{
-  position: absolute;
-  left: 420px;
-  top: 27px;
-  width: 460px;
-  visibility: hidden;
+.services-decription{
+  position: relative;
+  top: -27px;
+  margin: 0 0 0 400px ;
+  padding: 0;
+  list-style: none;
 }
 
-.services-list-decription::before{
+.services-decription li{
+  position: relative;
+  width: 460px;
+  display: none;
+  padding-bottom: 50px;
+}
+
+.services-decription div::before{
   content: "";
   display: block;
   position: absolute;
   width: 200px;
   height: 200px;
-  top: 40px;
+  top: -5px;
   left: 525px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
-.services-list-delivery::before{
+.services-delivery::before{
   background-image: url("../img/svg/delivery.svg");
 }
 
-.services-list-warrant::before{
+.services-warrant::before{
   background-image: url("../img/svg/warranty.svg");
 }
 
-.services-list-credit::before{
+.services-credit::before{
   background-image: url("../img/svg/credit.svg");
 }
 
-.services-list-decription h3{
+.services-decription h3{
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-weight: bold;
   font-size: 47px;
@@ -767,22 +764,22 @@ img {
   margin-bottom: 30px;
 }
 
-#services-button-1:checked ~ div,
-#services-button-2:checked ~ div,
-#services-button-3:checked ~ div{
-  visibility: visible;
+#services-button-1:checked ~ .services-decription>li:nth-child(1),
+#services-button-2:checked ~ .services-decription>li:nth-child(2),
+#services-button-3:checked ~ .services-decription>li:nth-child(3){
+  display: block;
 }
 
-#services-button-1:checked ~ label,
-#services-button-2:checked ~ label,
-#services-button-3:checked ~ label{
+#services-button-1:checked ~ .services-menu>li:nth-child(1)>label,
+#services-button-2:checked ~ .services-menu>li:nth-child(2)>label,
+#services-button-3:checked ~ .services-menu>li:nth-child(3)>label{
   background-color: #000;
   color: #f7e184;
 }
 
-#services-button-1:checked ~ label::before,
-#services-button-2:checked ~ label::before,
-#services-button-3:checked ~ label::before{
+#services-button-1:checked ~ ul>li:nth-child(1)>label::before,
+#services-button-2:checked ~ ul>li:nth-child(2)>label::before,
+#services-button-3:checked ~ ul>li:nth-child(3)>label::before{
   content: "";
   display: block;
   position: absolute;
@@ -802,6 +799,8 @@ img {
   margin-bottom: 75px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .logotypes ul{
@@ -819,62 +818,54 @@ img {
 .logo-item a{
   display: block;
   font-size: 0px;
-  height: 140px;
+  height: 100px;
   width: 260px;
   background-repeat: no-repeat;
-  background-position-x: 0px;
-  background-position-y: center;
   opacity: 0.2;
 }
 
 .logo-item a:hover{
   opacity: 1;
-  filter:none;
-  -webkit-filter: none;
-  position: relative;
 }
 
-.logotype-dji a{
-  background-image: url("../img/logo/logo-dji-gray.jpg");
+.logotype-dji a:hover {
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px 0px;
 }
 
-.logotype-spgadgets a{
-  background-image: url("../img/logo/logo-spgadgets-gray.jpg");
+.logotype-dji a {
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -100px;
 }
 
-.logotype-gopro a{
-  background-image: url("../img/logo/logo-gopro-gray.jpg");
+.logotype-gopro a:hover {
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -200px;
+}
+
+.logotype-gopro a {
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -300px;
+}
+
+.logotype-spgadgets a:hover {
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -400px;
+}
+
+.logotype-spgadgets a {
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -500px;
+}
+
+.logotype-vive a:hover{
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -600px;
 }
 
 .logotype-vive a{
-  background-image: url("../img/logo/logo-vive-gray.jpg");
-}
-
-.logo-item a:hover::before{
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-position-x: 0px;
-  background-position-y: center;
-}
-
-.logotype-dji a:hover::before{
-  background-image: url("../img/logo/logo-dji.jpg");
-}
-
-.logotype-spgadgets a:hover::before{
-  background-image: url("../img/logo/logo-spgadgets.jpg");
-}
-
-.logotype-gopro a:hover::before{
-  background-image: url("../img/logo/logo-gopro.jpg");
-}
-
-.logotype-vive a:hover::before{
-  background-image: url("../img/logo/logo-vive.jpg");
+  width: 260px; height: 100px;
+  background: url('../img/logo/logo_sprites.jpg') 0px -700px;
 }
 
 .info_and_contacts{
@@ -945,7 +936,6 @@ img {
   padding-right: 70px;
 }
 
-/* TODO заменить маркер на бордер радиус */
 .info li::before{
   content: "";
   display: inline-block;
@@ -1288,6 +1278,12 @@ img {
   padding-left: 21px;
 }
 
+.form-writeus input:invalid,
+.form-writeus input:invalid:focus,
+.form-writeus input:invalid:focus{
+  background-color: #f6dada;
+}
+
 .form-writeus textarea{
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1497,7 +1493,7 @@ img {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
-  padding: 8px 10px;
+  padding: 7px 10px 9px 10px;
   z-index: 1;
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-weight: bold;
@@ -1528,7 +1524,8 @@ img {
   transition: height 0.1s, top 0.1s;
 }
 
-.button:hover::before{
+.button:hover::before,
+.button:focus::before{
   content: "";
   display: inline-block;
   position: absolute;
@@ -1636,7 +1633,7 @@ img {
   content: "";
   right: 50%;
   left: 0;
-  background: linear-gradient(to bottom, #dbdbdb 70px, #eeeeee 70px);
+  background: linear-gradient(to bottom, #dbdbdb 70px, #efefef 70px);
 }
 .catalog-wrapper::after {
   position: absolute;
@@ -1664,7 +1661,7 @@ img {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-left: 60px;
-  background: linear-gradient(to bottom, #dbdbdb 70px, #ececec 70px);
+  background: linear-gradient(to bottom, #dbdbdb 70px, #efefef 70px);
 }
 
 .catalog {
@@ -1751,7 +1748,6 @@ img {
   padding-left: 40px;
 }
 
-
 .range-controls {
   position: relative;
   height: 45px;
@@ -1765,7 +1761,8 @@ img {
 }
 
 .range-controls .bar {
-  width: 110px;
+  position: relative;
+  width: 200px;
   height: 2px;
   background: #91c92f;
 }
@@ -1796,32 +1793,26 @@ img {
   line-height: 24px;
   opacity: 0.2;
   white-space:nowrap;
-  left: -50%;
 }
 
 .range-controls .toggle-min{
-  left: -5px;
+  left: 0px;
 }
 
 .range-controls .toggle-max {
-  left: 110px;
+  left: 180px;
 }
 
 .range-controls .toggle-min span{
-  margin-left: 15px;
+  margin-left: 0px;
 }
 
 .range-controls .toggle-max span{
-  margin-left: -10px;
-}
-
-.filter-input:hover + label,
-.filter-input:focus + label {
-  color: #663d15;
+  margin-left: -35px;
 }
 
 .filter-input-checkbox + label::before,
-.filter-input-checkbox:checked + label:active::before {
+.filter-input-checkbox:checked:not(:disabled) + label:active::before{
   content: "";
   position: absolute;
   left: 0px;
@@ -1834,17 +1825,17 @@ img {
 }
 
 .filter-input-checkbox:checked + label::before,
-.filter-input-checkbox + label:active::before {
+.filter-input-checkbox:not(:disabled) + label:active::before {
   background-image: url("../img/svg/checkbox-on.svg");
 }
 
 .filter-input-checkbox + label:hover::before,
-.filter-input-checkbox:checked + label:hover::before{
+.filter-input-checkbox:focus + label::before{
   opacity: 0.6;
 }
 
 .filter-input-radio + label::before,
-.filter-input-radio:checked + label:active::before {
+.filter-input-radio:checked:not(:disabled) + label:active::before {
   content: "";
   position: absolute;
   left: 0px;
@@ -1857,20 +1848,12 @@ img {
 }
 
 .filter-input-radio:checked + label::before,
-.filter-input-radio + label:active::before {
-  content: "";
-  position: absolute;
-  left: 0px;
-  top: 9px;
-  width: 26px;
-  height: 26px;
+.filter-input-radio:not(:disabled) + label:active::before {
   background-image: url("../img/svg/radio-on.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
 }
 
 .filter-input-radio + label:hover::before,
-.filter-input-radio:checked + label:hover::before {
+.filter-input-radio:focus + label::before {
   opacity: 0.6;
 }
 
@@ -2190,7 +2173,6 @@ img {
   margin: 0;
 }
 
-/* TODO: как выровнять по центру по вертикали без paddinga? */
 .pagination-list-container>p>a{
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -2215,6 +2197,3 @@ img {
 .pagination-list-container>p>a:active{
   color: rgba(0,0,0,0.3);
 }
-
-
-

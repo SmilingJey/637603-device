@@ -15,7 +15,7 @@
         <form class="header-search" action="https://echo.htmlacademy.ru"
         method="get" >
             <label class="visually-hidden" for="search-input">Поиск по сайту</label>
-            <input id="search-input" type="text" name="search"
+            <input id="search-input" type="text" name="search" class="search-input" 
             placeholder="Поиск по сайту" autocomplete="off">
             <button type="submit">Найти</button>
         </form>
@@ -37,7 +37,7 @@
       <nav>
         <ul class="header-menu">
           <li class="header-catalog">
-              <a href="catalog.html">Каталог товаров</a>
+              <a class="header-catalog-link" href="catalog.html">Каталог товаров</a>
             <div class="header-catalog-menu">
               <ul class="header-catalog-menu-column1">
                 <li><a href="#">Виртуальная реальность</a></li>
@@ -232,13 +232,13 @@
           </ul>
 
           <div class="pagination-list-container">
-            <p><a href="#">Назад</a></p>
+            <p><a class="pagination-button" href="#">Назад</a></p>
             <ul class="pagination-list">
               <li class="pagination-item pagination-item-current"><a>1</a></li>
               <li class="pagination-item"><a href="#">2</a></li>
               <li class="pagination-item"><a href="#">3</a></li>
             </ul>
-            <p><a href="#">Вперед</a></p>
+            <p><a class="pagination-button" href="#">Вперед</a></p>
           </div>
         </section>
       </div>

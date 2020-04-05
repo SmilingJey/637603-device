@@ -12,3 +12,4 @@ Thumbs.db
 gulpfile.js
 package.json
 package-lock.json
+public/
